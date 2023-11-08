@@ -1,20 +1,26 @@
 # Spring Boot API
 
-Spring Boot REST API for Books and Authors.
+Spring Boot REST API for Books and Authors. I built this project for ongoing learning while progressing through [Devtiro's Spring Boot Course](https://www.youtube.com/watch?v=Nv2DERaMx-4).
 
-## Setting up PostgreSQL
+## Running the application
 
-A PostgreSQL database is used for this project. Follow the steps below to start one using Docker.
+The project uses PostgreSQL for its database while running. Tests utilize the H2 in-memory database. Follow the steps below to setup PostgreSQL using Docker.
 
-1. Ensure Docker is running on your machine
-2. Run `docker-compose up` from this `hibernate` directory
-3. Run the tests (see below)
-   - You should be able to open the database using Postico or any other SQL client supported by Postgres and connect using the connection info in this project's `application.yml` file.
+1. Ensure Java 21 is installed
+2. Ensure Docker is running on your machine
+3. Start the database on port **5433** (connection info. can be found in the project's `application.yml` file)
+   ```sh
+   docker-compose up
+   ```
+4. Run the application on port **5000**
+   ```sh
+   ./mvnw spring-boot:run
+   ```
 
 ## Running tests
 
-1. Ensure Java 21 is installed
-2. Build the application and run the tests
-   ```sh
-   ./mvnw clean verify
-   ```
+Build the application and run the tests
+
+```sh
+  ./mvnw clean verify
+```
