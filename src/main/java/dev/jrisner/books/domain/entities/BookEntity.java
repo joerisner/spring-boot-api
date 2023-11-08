@@ -1,4 +1,4 @@
-package dev.jrisner.books.domain;
+package dev.jrisner.books.domain.entities;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -13,7 +13,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 @Entity
 @Table(name = "books")
-public class Book {
+public class BookEntity {
   
   @Id
   private String isbn;
@@ -22,13 +22,13 @@ public class Book {
   
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "author_id")
-  private Author author;
+  private AuthorEntity author;
 
   //#region Constructors
-  public Book() {
+  public BookEntity() {
   }
 
-  public Book(String isbn, String title, Author author) {
+  public BookEntity(String isbn, String title, AuthorEntity author) {
     this.isbn = isbn;
     this.title = title;
     this.author = author;
@@ -52,11 +52,11 @@ public class Book {
     this.title = title;
   }
 
-  public Author getAuthor() {
+  public AuthorEntity getAuthor() {
     return author;
   }
 
-  public void setAuthor(Author author) {
+  public void setAuthor(AuthorEntity author) {
     this.author = author;
   }
   //#endregion Getters/Setters

@@ -1,4 +1,4 @@
-package dev.jrisner.books.domain;
+package dev.jrisner.books.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 @Entity
 @Table(name = "authors")
-public class Author {
+public class AuthorEntity {
   
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_id_seq")
@@ -21,10 +21,10 @@ public class Author {
   private Integer age;
 
   //#region Constructors
-  public Author() {
+  public AuthorEntity() {
   }
 
-  public Author(Long id, String name, Integer age) {
+  public AuthorEntity(Long id, String name, Integer age) {
     this.id = id;
     this.name = name;
     this.age = age;
